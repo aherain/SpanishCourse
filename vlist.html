@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>经贸小词典</title>
+<style type="text/css">
+#lan{ margin:3px 5px auto 35px; height:29px; width:180px;}
+#sub{ margin-top:1px; height:29px; color:#069;}
+
+</style>
+<script type="text/javascript">
+function search(){
+	var obj1=document.getElementById("lan").value;
+	alert("你确定检索 :"+obj1);
+	
+	var obj2=new Array("archivo存档档案","destinatario收查人","suspender中止中断","bienm观点视角","servicio服务","importador进口商思","nversióndecartera证劵投资","qweretuioyponplkhgf不存在");
+	var obj3=new Array();
+	var j=0;
+	for(i=0;i<obj2.length;i++){
+		
+		if(obj2[i].indexOf(obj1)!=-1)
+			{ 
+			var t;
+			t=obj2[i];
+			obj3[j++]=obj2[i];
+			obj2[i]=t;
+			
+			}
+	   }
+	   var resultString="";
+	for(i=0;i<obj3.length;i++){
+		resultString=resultString+obj3[i]+"<hr/>";
+		
+		}
+	if(obj3.length==0){
+		
+		resultString="<img src='img/notfound.png'>";
+		}
+	result.innerHTML=resultString;
+	}
+
+</script>
+</head>
+
+<body style=" margin:0 auto;">
+
+<div style="width:300px; height:430px; margin:0 auto; background-image:url(img/cidianbg.png)">
+<br/>
+<br/>
+<hr/>
+<input id="lan" type="text"><input id="sub" onClick="search()" type="submit" value="search"/>
+<hr>
+<h6>&nbsp;&nbsp; 检索结果：</h6>
+<div id="result" style="margin: 0 auto; width:280px; height:160px;font-size:12px" >
+    <ol>
+    <li>Membrete (m.)（书信的）抬头，版头</li><hr/>
+    <li>Grato (adj.) &nbsp; 令人愉快的</li>
+    <hr/>
+    <li>Clasificación&nbsp; (f.)分类</li>
+    <hr/>
+    </ol>
+
+</div>
+<center><a href="#">加载更多</a></center>
+</div>
+
+</body>
+</html>

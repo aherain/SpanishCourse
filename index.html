@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<meta http-equiv="imagetoolbar" content="no">
+<style type="text/css">
+	html{
+		overflow:hidden;}
+	body {
+		background:#FFF;
+		width: 100%;
+		height: 100%;
+	}
+	.spanSlide {
+		position: absolute;
+		background: #000;
+		font-size: 1px;
+		overflow: hidden;
+	}
+	.imgSlide {
+		position: absolute;
+		left: 5%;
+		top: 5%;
+		width: 90%;
+		height: 90%;
+		overflow: hidden;
+	}
+	.txtSlide {
+		position: absolute;
+		top: 5%;
+		left: 50px;
+		width:100%;
+		color:#FFF;
+		font-family: arial, helvetica, verdana, sans-serif;
+		font-weight: bold;
+		font-size:60px;
+		letter-spacing:12px;
+		filter: alpha(opacity=60);
+		-moz-opacity:0.6;
+		opacity:0.6;
+	}
+	
+ A{
+	FONT-SIZE:8pt;color:#036;font-weight:600;font-family:Verdana, Geneva, sans-serif;TEXT-DECORATION: none
+}
+ A:hover{
+	FONT-SIZE:9pt; color:#000;  font-family:"Arial Black", Gadget, sans-serif; TEXT-DECORATION: none
+}
+</style>
+
+<script type="text/javascript">
+
+var ym=0;
+var ny=0;
+
+createElement = function(container, type, param){
+	o=document.createElement(type);
+	for(var i in param)o[i]=param[i];
+	container.appendChild(o);
+	return o;
+}
+
+mooz = {
+	O:[],
+	/////////
+	mult:6,
+	nbI:5,
+	/////////
+	rwh:0,
+	imgsrc:0,
+	W:0,
+	H:0,
+
+	Xoom:function(N){
+		this.o = createElement(document.getElementById("screen"), "span", {
+			'className':'spanSlide'
+		});
+		img = createElement(this.o, "img", {
+			'className':"imgSlide",
+			'src':mooz.imgsrc[N%mooz.imgsrc.length].src
+		});
+		spa = createElement(this.o, "span", {
+			'className':"imgSlide"
+		});
+		txt = createElement(spa, "span", {
+			'className':"txtSlide",
+			'innerHTML':mooz.imgsrc[N%mooz.imgsrc.length].title
+		});
+		this.N = 10000+N;
+	},
+
+	mainloop:function(){
+		with(this){
+			for(i=0; i<mooz.nbI; i++) {
+				O[i].N += (ym-ny)/8000;
+				N = O[i].N%nbI;
+				ti = Math.pow(mult,N);
+				with(O[i].o.style){
+					left   = Math.round((W-(ti*rwh))/(W+ti)*(W*.5))+"px";
+					top    = Math.round((H-ti)/(H+ti)*(H*.5))+"px";
+					zIndex = Math.round(10000-ti*.1);
+					width  = Math.round(ti*rwh)+"px";
+					height = Math.round(ti)+"px";
+				}
+			}
+		}
+		setTimeout("mooz.mainloop();",120);
+	},
+
+	oigres:function(){
+		with(this){
+			W = parseInt(document.getElementById("screen").style.width);
+			H = parseInt(document.getElementById("screen").style.height);
+			imgsrc = document.getElementById("images").getElementsByTagName("img");
+			rwh = imgsrc[0].width/imgsrc[0].height;
+			for(var i=0;i<nbI;i++) O[i] = new Xoom(i);
+			mainloop();
+		}
+	}
+}
+
+document.onmousemove = function(e){
+	if(window.event) e=window.event;
+	ym = (e.y || e.clientY);
+	if(ym/2>ny)ny=ym/2;
+}
+
+window.onload = function(){
+	ym = ny+50;
+	mooz.oigres();
+}
+
+</script>
+</head>
+<body>
+<embed hidden="true" src="video/bgsound.mp3" loop="2" />
+<div style="margin:0 auto;width:1000px;height:90px; background-image:url(images/headerf1.png)"></div>
+<div style="margin:0 auto;width:1000px;height:5px; background-color:#CCC;"></div>
+<div style=" width:1000px; height:380px; margin:0 auto;">
+<!--图片播放栏-->
+
+<div style="position: absolute; left: 780px; top: 450px; color: #039; font-family: arial; font-size: 1.5em; width: 150px;"></div>
+    
+	<div id="screen" style="position: absolute; width: 1000px; height: 380px;  overflow: hidden; margin:0 auto;"></div>
+    
+
+<div id="images" style="visibility:hidden; ">
+	<img title="China" src="images/1.jpg">
+	<img title="Mundo" src="images/2.jpg">
+	<img title="Sueño" src="images/3.jpg">
+	<img title="Ganar" src="images/4.jpg">
+	<img title="Junto" src="images/5.jpg">    
+</div>
+
+</div>
+
+<div style="margin:0 auto;width:1000px;height:5px; background-color:#CCC;"></div>
+
+
+<div style="margin:0 auto;width:1000px;height:140px; background-image:url(images/footf.png); z-index:1">
+<table width="1000px" height="36"><tr><td width="63" height="30"></td><td width="47"></td>
+<td width="74"><a href="course_introduce.html">&nbsp;&nbsp; 课程介绍</a></td>
+<td width="74"><a href="course_excese.html">&nbsp;&nbsp; 课程练习</a></td>
+<td width="74"><a href="expand_learn.html">&nbsp;&nbsp; 辅助学习</a></td>
+<td width="64"><a href="expand_excese.html">&nbsp; 辅助练习</a> </td>
+<td width="84"><a href="practical_writing.html">&nbsp;&nbsp; 经贸应用文</a></td>
+<td width="74"> <a href="article_reading.html"> &nbsp; 经贸文章</a> </td>
+<td width="64"><a href="session.html" >   &nbsp;经贸会话</a></td>
+<td width="74"><a href="video_resource.html"> &nbsp; 视频资源</a> </td>
+<td width="74"><a href="test_evaluate.html">  在线测试</a></td>
+<td width="158"><a href="http://blog.sina.com.cn/u/3867790124" target=_blank>学习论坛</a></td></tr></table>
+
+<table width="1000px" height="41"><tr><td width="64" height="35"></td><td width="48"></td>
+<td width="75">&nbsp;</td>
+<td width="75">&nbsp;</td>
+<td width="75">&nbsp;</td>
+<td width="65">&nbsp;</td>
+<td width="86">&nbsp;</td>
+<td width="75">&nbsp;</td>
+<td width="65"></td>
+<td width="75">&nbsp;</td>
+<td width="145">&nbsp;</td>
+<td width="100"><a href="index_p.html" > &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </a></td></tr></table>
+
+</div>
+
+</body>
+</html>

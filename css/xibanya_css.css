@@ -1,0 +1,120 @@
+@charset "utf-8";
+body {
+	background-color: #f2f9fe;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: "宋体";
+	font-size: 10pt;
+	color: #000;
+}
+td {
+	font-family: "宋体";
+	font-size: 10pt;
+	color: #000;
+}
+
+A:hover {
+	FONT-SIZE: 10pt; COLOR:#007ab0; FONT-FAMILY: "宋体"; TEXT-DECORATION: none;
+}
+A:visited {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+A {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.tbl_top {
+	background-image:url(../0938322imvbmmdhfwijmxbp.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 270px;
+	width: 1000px;
+}
+.tb2_top {
+	background-image:url(../images/danghang_00.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 20px;
+	width: 1000px;
+}
+.td_bg {
+background-color:#f1f1f2;
+}
+.left_top {
+	color: #00F;
+	background-image: url(../images/left_top_bg.jpg);
+	background-repeat: no-repeat;
+	height: 85px;
+	width: 140px;
+	padding-top: 10px;
+	padding-left: 64px;
+	letter-spacing: 3px;
+}
+.center_top {
+	background-image: url(../images/center_top_bg.jpg);
+	background-repeat: no-repeat;
+	height: 53px;
+	vertical-align: top;
+}
+
+.left_bot {
+	background-image: url(../images/left_bot_bg.jpg);
+	background-repeat: no-repeat;
+	height: 63px;
+	width: 226px;
+}
+.yangshi1
+{
+background-color:#2568AE;
+}
+.yangshi2
+{
+background-color:#FAFCFF;
+}
+.yangshi3
+{
+border-left:0px;
+border-right:0px;
+border-top:0px;
+border-bottom:1px solid #336699;
+background-color:#FAFCFF;
+width:120px;
+}
+.yangshi4
+{
+background-color:#ffffff;
+}
+a.yangshi5:visited {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+a.yangshi5:hover {
+	FONT-SIZE: 10pt; COLOR: #cccfff; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+a.yangshi5:link {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.yangshi6
+{
+border-left:0px;
+border-right:0px;
+border-top:0px;
+border-bottom:1px solid #336699;
+background-color:#FAFCFF;
+width:280px;
+}
+.yangshi7
+{
+border-left:0px;
+border-right:0px;
+border-top:0px;
+border-bottom:1px solid #336699;
+background-color:#FAFCFF;
+width:200px;
+}
+ #daohang tr{
+	 background:rgba(153,153,153,0.2);
+	 } 
+#daohang A:hover {
+	FONT-SIZE: 12pt; COLOR: #ffffff; FONT-FAMILY: "宋体"; TEXT-DECORATION: none; background:rgba(204,204,204,0.4);
+}
